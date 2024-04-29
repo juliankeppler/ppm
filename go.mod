@@ -1,6 +1,6 @@
 module github.com/juliankeppler/ppm
 
-go 1.22.0
+go 1.22
 
 require gioui.org v0.6.0
 
