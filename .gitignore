@@ -17,3 +17,5 @@
 .idea/
 
 test.ppm
+
+*.syso

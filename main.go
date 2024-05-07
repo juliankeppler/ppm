@@ -27,19 +27,19 @@ func main() {
 		log.Fatal(err)
 	}
 
+	x, y := img.Bounds().Size().X, img.Bounds().Size().Y
 	go func() {
-		window := new(app.Window)
-		err := run(window)
+		w := new(app.Window)
+		w.Option(app.Title("PPM Viewer"))
+		w.Option(app.Size(unit.Dp(x), unit.Dp(y)))
+		w.Option(app.MaxSize(unit.Dp(x), unit.Dp(y)))
+		w.Option(app.MinSize(unit.Dp(x), unit.Dp(y)))
+		err := run(w)
 		if err != nil {
 			log.Fatal(err)
 		}
 		os.Exit(0)
 	}()
-	x, y := img.Bounds().Size().X, img.Bounds().Size().Y
-	app.Title("Image")
-	app.Size(unit.Dp(x), unit.Dp(y))
-	app.MaxSize(unit.Dp(x), unit.Dp(y))
-	app.MinSize(unit.Dp(x), unit.Dp(y))
 	app.Main()
 }
 

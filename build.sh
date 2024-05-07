@@ -1,0 +1,1 @@
+GOOS=windows GOARCH=amd64 gogio -buildmode=exe -icon=ppm.png -arch=amd64 -target=windows -o ppm.exe -ldflags="-H=windowsgui" .
